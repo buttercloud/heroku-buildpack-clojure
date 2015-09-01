@@ -67,10 +67,11 @@ status "Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$HOME/.gem/ruby/1.9.1/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ruby.sh
 
-mkdir -p $BUILD_DIR/resources/public/css
-
-sass --scss -I $BUILD_DIR/resources/scss/ -t compressed $BUILD_DIR/resources/scss/site.scss $BUILD_DIR/resources/public/css/site.css
-
+if [ -f $BUILD_DIR/sass.sh ]; then
+  echo "Detected sass.sh"
+  echo "Running sass.sh"
+  $BUILD_DIR/sass.sh
+fi
 #### END-NEW
 
 
