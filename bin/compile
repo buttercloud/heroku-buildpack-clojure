@@ -67,7 +67,7 @@ status "Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$HOME/.gem/ruby/1.9.1/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ruby.sh
 
-$GEM_HOME/bin/sass exec sass --scss -I resources/scss/ -t compressed
+$GEM_HOME/bin/sass sass --scss -I resources/scss/ -t compressed
 
 #### END-NEW
 
